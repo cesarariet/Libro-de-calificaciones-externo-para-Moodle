@@ -128,3 +128,14 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+
+
+
+### -------------------------------------------------
+# AGREGADOS POR Mario Estanislao Cesar Ariet
+# ---------------------------------------------------
+
+# Para poner las variables de entornos de cada curso
+.env.*
+# Para que no haga versionado de las listas
+listas/

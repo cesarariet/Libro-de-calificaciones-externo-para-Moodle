@@ -1,0 +1,18 @@
+{
+  "name": "notas_scripts",
+  "version": "1.0.0",
+  "description": "Hacer logging en una página de moodle y descargar todas las notas referentes a un curso específico.",
+  "main": "prueba.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Mario Estanislao Cesar Ariet",
+  "license": "ISC",
+  "dependencies": {
+    "await-timeout": "^1.1.1",
+    "csv-parser": "^3.0.0",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "puppeteer": "^22.13.0"
+  }
+}
