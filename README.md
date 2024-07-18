@@ -34,10 +34,10 @@ Las calificaciones se separarán en tres categorías:
 
 ## TODO
 
-- [ ] Implementar variables de entorno para cada curso y las credenciales.
+- [ ] Implementar variables de entorno para cada curso y sus credenciales.
 - [x] Iniciar sesión en el sitio Moodle del curso y bajar el archivo csv.
 - [ ] Hacer la página con el formulario seleccionar el curso y consultar las notas del estudiante.
 - [ ] Mostrar las notas en formato enriquecido.
-- [ ] Servicio de notificaciones con un bot de Telegram para saber cuando se realizaron las actualizaciones y el estado de las mismas.
+- [ ] Servicio de notificaciones con un bot de Telegram para saber cuando se realizaron las actualizaciones.
 
 
