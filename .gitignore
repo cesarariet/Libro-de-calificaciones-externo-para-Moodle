@@ -132,10 +132,10 @@ dist
 
 
 ### -------------------------------------------------
-# AGREGADOS POR Mario Estanislao Cesar Ariet
+#  EDITED BY Mario Estanislao Cesar Ariet
 # ---------------------------------------------------
 
-# Para poner las variables de entornos de cada curso
-.env.*
-# Para que no haga versionado de las listas
-listas/
+# Directory where the environment variables for each course go. The format must be equal to sample.env. 
+envs/*
+# Directory where gradebooks are downloaded
+grade_books/*

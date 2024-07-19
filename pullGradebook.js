@@ -3,10 +3,11 @@
 // Import required modules
 const puppeteer = require('puppeteer');
 const path = require('path');
+const fs = require('fs')
 const Timeout = require('await-timeout');
 
 // Load environment variables from .env file
-require('dotenv').config();
+require('dotenv').config({ path: process.env.ENVPATH });
 
 // Define constants from environment variables
 const URL_MOODLE = process.env.URL_MOODLE;
@@ -19,7 +20,10 @@ const URL_DOWNLOAD_CSV = `${URL_MOODLE}/grade/export/txt/index.php?id=${ID_COURS
 
 (async () => {
   // Define the path where files will be downloaded
-  const downloadPath = path.resolve('./grade_books');
+  const downloadPath = path.resolve(__dirname, `./grade_books/${process.env.NAME_COURSE}/`);
+
+  // Ensure the download directory exists
+  fs.mkdirSync(downloadPath, { recursive: true });
 
   // Launch a new browser instance
   const browser = await puppeteer.launch({ headless: false });

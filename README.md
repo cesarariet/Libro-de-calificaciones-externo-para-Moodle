@@ -13,16 +13,17 @@ La plataforma [Moodle](https://moodle.org/) permite usar una API pero es necesar
 
 ## Flujo de información 
 
-1. Ingreso a la dirección donde se puede hacer una exportación de las calificaciones en formato csv. En Moodle eso se encuentra en 
+1. Se ejecuta `./downloadAllGradeBooks.js`. Este lee las variables de entorno y credenciales Moodle en la carpeta `./envs`. El script ejecuta para cada archivo .env el archivo `./pullGradebook.js` con las variables de entorno correspondientes.
+1. Se Ingresa a la dirección donde se puede hacer una exportación de las calificaciones en formato csv. En Moodle eso se encuentra en 
 ```
 https//dominio_mooodle/grade/export/txt/index.php?id=ID_DEL_CURSO
 ```
-2. La plataforma pide las credenciales del docente, se ingrensan.
-3. Se descarga en formato .csv las calificaciones del curso.
+2. La plataforma pide las credenciales del docente, se ingresan. La información de los cursos y credenciales de acceso están en la carpeta `./envs/`.
+3. Se descarga en formato .csv las calificaciones de cada curso en una carpeta con el nombre corto del curso dentro de del directorio `./grade_books/`.
+4. Se despliega una página con un formulario para ingresar el curso y el documento de identidad del alumno. Enviados los datos, la página devuelve todas las calificaciones del archivo .csv del alumno con un formato enriquecido. 
 
 Estas acciones de actualización de calificaciones se puede automatizar con el uso del crontab. Esta operación además permite tener un backup de las calificaciones por posibles inconvenientes con la plataforma Moodle.
 
-4. Se despliega una página con un formulario para ingresar el curso y el documento de identidad del alumno. Enviados los datos, la página devuelve todas las calificaciones del archivo .csv del alumno con un formato enriquecido. 
 
 ## Tipos de calificaciones
 
@@ -34,7 +35,7 @@ Las calificaciones se separarán en tres categorías:
 
 ## TODO
 
-- [ ] Implementar variables de entorno para cada curso y sus credenciales.
+- [x] Implementar variables de entorno para cada curso y sus credenciales.
 - [x] Iniciar sesión en el sitio Moodle del curso y bajar el archivo csv.
 - [ ] Hacer la página con el formulario seleccionar el curso y consultar las notas del estudiante.
 - [ ] Mostrar las notas en formato enriquecido.
